@@ -1,0 +1,54 @@
+### Spring ###
+spring:
+  # Application
+  application:
+    name: spring-boot-oidc-client-login-stateless-token-cache
+  # Messages
+  messages:
+    basename: locale/messages
+  # Security
+  security:
+    oauth2:
+      client:
+        registration:
+          generic-client:
+            provider: uaa
+            client-id: generic-client
+            client-secret: abcd1234
+            #"authorization_code"
+            authorization-grant-type: "urn:ietf:params:oauth:grant-type:jwt-bearer"
+            scope:
+              - openid
+              - profile
+        provider:
+          uaa:
+            userNameAttribute: username
+            authorizationUri: http://localhost:8000
+            user-info-uri: http://localhost:8000/uaa/oauth/user
+            token-uri: http://localhost:8000/uaa/oauth/token
+
+            #issuer-uri:
+            #issuer-uri: http://localhost:8888/uaa/oauth/token
+
+### Logging ###
+logging:
+  level:
+    no: TRACE
+    root: INFO
+    web: INFO
+    no.acntech: DEBUG
+    org.springframework.web.client: TRACE
+    org.springframework.security: TRACE
+
+### Server ###
+server:
+  port: 8080
+  error:
+    include-stacktrace: ALWAYS
+    whitelabel:
+      enabled: false
+feign:
+  client:
+    config:
+      default:
+        logger-level: full

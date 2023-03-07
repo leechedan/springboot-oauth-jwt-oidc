@@ -1,0 +1,39 @@
+### Spring ###
+spring:
+  # Application
+  application:
+    name: spring-boot-oidc-client-login-stateless
+  # Messages
+  messages:
+    basename: locale/messages
+  # Security
+  security:
+    oauth2:
+      client:
+        registration:
+          generic-client-login:
+            provider: uaa
+            client-id: generic-client
+            client-secret: abcd1234
+            scope:
+              - openid
+              - profile
+        provider:
+          uaa:
+            issuer-uri: http://localhost:8888/uaa/oauth/token
+
+### Logging ###
+logging:
+  level:
+    root: INFO
+    web: INFO
+    no.acntech: DEBUG
+    org.springframework: INFO
+
+### Server ###
+server:
+  port: 8080
+  error:
+    include-stacktrace: ALWAYS
+    whitelabel:
+      enabled: false

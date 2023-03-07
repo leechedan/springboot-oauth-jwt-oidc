@@ -1,0 +1,30 @@
+### Spring ###
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+
+### SECURITY ###
+security:
+  oauth2:
+    client:
+      client-id: generic-client
+      client-secret: abcd1234
+
+### Server ###
+server:
+  port: 8000
+
+### Logging ###
+logging:
+  level:
+    org.springframework.web.client: TRACE
+    org.springframework.security: TRACE
+    no.acntech: TRACE
+
+feign:
+  client:
+    config:
+      default:
+        logger-level: full
