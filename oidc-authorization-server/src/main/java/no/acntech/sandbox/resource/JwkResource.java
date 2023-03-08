@@ -12,7 +12,7 @@ import java.util.Map;
 
 import no.acntech.sandbox.service.KeyService;
 
-@RequestMapping(path = "keys")
+@RequestMapping(path = "jwk")
 @RestController
 public class JwkResource {
 

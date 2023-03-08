@@ -16,10 +16,10 @@ import javax.validation.Valid;
 import java.util.Date;
 import java.util.UUID;
 
-import no.acntech.sandbox.domain.Jwt;
+import no.acntech.sandbox.domain.dto.Jwt;
 import no.acntech.sandbox.service.KeyService;
 
-@RequestMapping(path = "token")
+@RequestMapping(path = "jwt")
 @RestController
 public class JwtResource {
 

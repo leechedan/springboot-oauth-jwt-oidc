@@ -37,16 +37,24 @@ public class KeyService {
     }
 
     public RSAKey publicRsaKey() throws Exception {
+        return publicRsaKey(KEY_ID);
+    }
+
+    public RSAKey publicRsaKey(String kid) throws Exception {
         return new RSAKey.Builder(publicKey())
-                .keyID(KEY_ID)
+                .keyID(kid)
                 .keyUse(KeyUse.SIGNATURE)
                 .build();
     }
 
     public RSAKey privateRsaKey() throws Exception {
+        return privateRsaKey(KEY_ID);
+    }
+
+    public RSAKey privateRsaKey(String kid) throws Exception {
         return new RSAKey.Builder(publicKey())
                 .privateKey(privateKey())
-                .keyID(KEY_ID)
+                .keyID(kid)
                 .keyUse(KeyUse.SIGNATURE)
                 .algorithm(JWSAlgorithm.RS256)
                 .build();

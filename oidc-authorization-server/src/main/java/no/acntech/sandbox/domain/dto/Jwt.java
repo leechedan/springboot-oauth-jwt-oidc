@@ -1,4 +1,4 @@
-package no.acntech.sandbox.domain;
+package no.acntech.sandbox.domain.dto;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
